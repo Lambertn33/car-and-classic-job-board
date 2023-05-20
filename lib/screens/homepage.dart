@@ -11,6 +11,9 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
+    void navigateToOpeningsPage() {
+      Navigator.pushNamed(context, '/openings');
+    }
     return Scaffold(
       backgroundColor: Constants.primaryColor,
       body: SafeArea(
@@ -43,7 +46,7 @@ class _HomepageState extends State<Homepage> {
                 height: 35,
               ),
               InkWell(
-                onTap: () {},
+                onTap: navigateToOpeningsPage,
                 child: Container(
                   height: 70,
                   width: MediaQuery.of(context).size.width,

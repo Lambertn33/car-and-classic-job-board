@@ -1,5 +1,5 @@
 import 'package:careers_app/helpers/constants.dart';
-import 'package:careers_app/screens/homepage.dart';
+import 'package:careers_app/router/router.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,9 +17,8 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: Constants.primaryFont
       ),
-      home: Scaffold(
-        body: const Homepage(),
-      ),
+      initialRoute: "/",
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
