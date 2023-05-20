@@ -72,6 +72,20 @@ class _OpeningsListPageState extends State<OpeningsListPage> {
                 style: TextStyle(fontSize: 26, color: Constants.primaryColor),
               ),
               const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50)),
+                    labelText: 'Search opening...',
+                    labelStyle: TextStyle(color: Constants.primaryColor),
+                  ),
+                ),
+              ),
+              const SizedBox(
                 height: 15,
               ),
               for (var i = 0; i < openingsList.length; i++)
