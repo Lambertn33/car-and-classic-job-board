@@ -35,7 +35,7 @@ class _OpeningCardWidgetState extends State<OpeningCardWidget> {
             ),
             InkWell(
               child: Container(
-                height: 50,
+                height: 45,
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width / 2,
                 decoration: BoxDecoration(
@@ -46,7 +46,7 @@ class _OpeningCardWidgetState extends State<OpeningCardWidget> {
                   style: TextStyle(fontSize: 20, color: Constants.primaryColor),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

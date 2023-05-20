@@ -74,7 +74,7 @@ class _OpeningsListPageState extends State<OpeningsListPage> {
               const SizedBox(
                 height: 15,
               ),
-              for (var i = 1; i < openingsList.length; i++)
+              for (var i = 0; i < openingsList.length; i++)
                 OpeningCardWidget(
                   openingDetails: openingsList[i],
                 ),

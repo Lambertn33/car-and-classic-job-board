@@ -25,7 +25,7 @@ class OpeningsServices {
               'You will be confident enough to self-organise and to work strongly from your own initiative. You will be happy to speak to people from all corners of the classic and specialist car world, from home-based enthusiasts to specialist dealers with stock valued at millions. And, on that note, you will be as engaged and as invested in shooting a Morris Minor as you would be a Merak.'
               'You will be a skilled photographer, with the ability to demonstrate this with past work in the automotive field; regrettably, we cannot consider photographers without an automotive portfolio. You’ll have a consistent and thoughtful approach to your work and a very good understanding of the principles of vehicle photography, able to deliver accurate and informative images. This will rely also on your vehicle knowledge, as you’ll be expected to photograph all the important details of a particular vehicle.'
               'Above all, however, you’ll be someone looking to join a great team of enthusiasts who are shaking up the classic and specialist car market. Car & Classic is a household name now, and we want people to come on this exciting journey with us.',
-          location: 'Freelace - Le Mans'),
+          location: 'Freelance - Le Mans'),
       Opening(
           id: uuid.v4(),
           title: 'Freelance photographers',
