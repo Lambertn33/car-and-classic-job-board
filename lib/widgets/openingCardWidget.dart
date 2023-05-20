@@ -34,6 +34,9 @@ class _OpeningCardWidgetState extends State<OpeningCardWidget> {
               style: const TextStyle(color: Colors.white, fontSize: 16),
             ),
             InkWell(
+              onTap: (){
+                Navigator.pushNamed(context, 'opening', arguments: opening);
+              },
               child: Container(
                 height: 45,
                 alignment: Alignment.center,
@@ -42,7 +45,7 @@ class _OpeningCardWidgetState extends State<OpeningCardWidget> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20)),
                 child: Text(
-                  'APPLY',
+                  'VIEW MORE',
                   style: TextStyle(fontSize: 20, color: Constants.primaryColor),
                 ),
               ),
