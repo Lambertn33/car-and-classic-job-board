@@ -35,7 +35,7 @@ class _OpeningCardWidgetState extends State<OpeningCardWidget> {
             ),
             InkWell(
               onTap: (){
-                Navigator.pushNamed(context, 'opening', arguments: opening);
+                Navigator.pushNamed(context, '/opening', arguments: opening);
               },
               child: Container(
                 height: 45,

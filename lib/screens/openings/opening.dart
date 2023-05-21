@@ -94,9 +94,13 @@ class _OpeningDetailsState extends State<OpeningDetails> {
                         opening.description,
                         textAlign: TextAlign.justify,
                       ),
-                      const SizedBox(height: 30,),
+                      const SizedBox(
+                        height: 30,
+                      ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, '/apply', arguments: opening);
+                        },
                         child: Container(
                           height: 60,
                           width: MediaQuery.of(context).size.width,
@@ -108,9 +112,9 @@ class _OpeningDetailsState extends State<OpeningDetails> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: const [
                               Text(
-                                'APPLY',
+                                'Apply for this job',
                                 style: TextStyle(
-                                    fontSize: 24,
+                                    fontSize: 22,
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600),
                               ),
@@ -120,6 +124,13 @@ class _OpeningDetailsState extends State<OpeningDetails> {
                             ],
                           ),
                         ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'We usually respond within a week',
+                        style: TextStyle(color: Constants.primaryColor),
                       ),
                     ]),
               )

@@ -26,11 +26,11 @@ class _HomepageState extends State<Homepage> {
                 child: Image.asset('assets/images/logo.png'),
               ),
               const Text(
-                'We are waiting for your CV',
+                'We are waiting for your application',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 30,
+                  fontSize: 36,
                 ),
               ),
               const SizedBox(
@@ -48,11 +48,11 @@ class _HomepageState extends State<Homepage> {
               InkWell(
                 onTap: navigateToOpeningsPage,
                 child: Container(
-                  height: 70,
+                  height: 65,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(50),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
