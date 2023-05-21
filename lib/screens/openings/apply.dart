@@ -1,7 +1,7 @@
 import 'package:careers_app/helpers/constants.dart';
+import 'package:careers_app/models/candidate.mode.dart';
 import 'package:careers_app/models/opening.model.dart';
 import 'package:careers_app/screens/termsandconditions.dart';
-import 'package:careers_app/widgets/textFormWidget.dart';
 import 'package:flutter/material.dart';
 
 class OpeningApply extends StatefulWidget {
@@ -14,10 +14,35 @@ class OpeningApply extends StatefulWidget {
 
 class _OpeningApplyState extends State<OpeningApply> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _yearsOfExperienceController = TextEditingController();
+  final TextEditingController _yearsOfExperienceController =
+      TextEditingController();
   final TextEditingController _portfolioUrlController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _namesController = TextEditingController();
   final TextEditingController _coverLetterController = TextEditingController();
+  @override
+  void dispose() {
+    _coverLetterController.dispose();
+    _emailController.dispose();
+    _namesController.dispose();
+    _portfolioUrlController.dispose();
+    _yearsOfExperienceController.dispose();
+    super.dispose();
+  }
+
+  void submitApplication() {
+    if (_formKey.currentState!.validate()) {
+      Candidate newCandidate = Candidate(
+          names: _namesController.text,
+          email: _emailController.text,
+          coverLetter: _coverLetterController.text,
+          portfolio: _portfolioUrlController.text,
+          yearsOfExperience: int.parse(_yearsOfExperienceController.text),
+          appliedOpening: widget.openingToApply);
+          Navigator.pushNamed(context, '/thankYou', arguments: newCandidate);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Opening openingToApply = widget.openingToApply;
@@ -109,51 +134,138 @@ class _OpeningApplyState extends State<OpeningApply> {
                     key: _formKey,
                     child: Column(
                       children: [
-                        TextFormFieldWidget(
+                        // years of experience
+                        TextFormField(
                           controller: _yearsOfExperienceController,
-                            maxLines: 1,
-                            hintText: 'years of experience',
-                            keyboardType: TextInputType.number,
-                            errorMessage: 'please enter some value'),
+                          maxLines: 1,
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintStyle: TextStyle(
+                                  color:
+                                      Constants.primaryColor.withOpacity(0.4),
+                                  fontSize: 14),
+                              hintText: 'years of experience',
+                              filled: true,
+                              fillColor: Constants.lightColor,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              errorStyle: const TextStyle(fontSize: 16)),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'provide the years of experience';
+                            }
+                            return null;
+                          },
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
-                        TextFormFieldWidget(
+                        // link to portfolio
+                        TextFormField(
                           controller: _portfolioUrlController,
-                            maxLines: 1,
-                            hintText: 'link to portfolio',
-                            keyboardType: TextInputType.url,
-                            errorMessage: 'please enter some value'),
+                          maxLines: 1,
+                          keyboardType: TextInputType.url,
+                          decoration: InputDecoration(
+                              hintStyle: TextStyle(
+                                  color:
+                                      Constants.primaryColor.withOpacity(0.4),
+                                  fontSize: 14),
+                              hintText: 'link to your portfolio',
+                              filled: true,
+                              fillColor: Constants.lightColor,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              errorStyle: const TextStyle(fontSize: 16)),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'provide the link';
+                            }
+                            return null;
+                          },
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
-                        TextFormFieldWidget(
-                            controller: _emailController,
-                            maxLines: 1,
-                            hintText: 'email address',
-                            keyboardType: TextInputType.emailAddress,
-                            errorMessage: 'please enter some value'),
+                        // names
+                        TextFormField(
+                          controller: _namesController,
+                          maxLines: 1,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                              hintStyle: TextStyle(
+                                  color:
+                                      Constants.primaryColor.withOpacity(0.4),
+                                  fontSize: 14),
+                              hintText: 'your names',
+                              filled: true,
+                              fillColor: Constants.lightColor,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              errorStyle: const TextStyle(fontSize: 16)),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'provide your names';
+                            }
+                            return null;
+                          },
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
-                        TextFormFieldWidget(
-                            controller: _coverLetterController,
-                            maxLines: 4,
-                            hintText: 'cover letter',
-                            keyboardType: TextInputType.text,
-                            errorMessage: 'please enter some value'),
+                        // email field
+                        TextFormField(
+                          controller: _emailController,
+                          maxLines: 1,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                              hintStyle: TextStyle(
+                                  color:
+                                      Constants.primaryColor.withOpacity(0.4),
+                                  fontSize: 14),
+                              hintText: 'email address',
+                              filled: true,
+                              fillColor: Constants.lightColor,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              errorStyle: const TextStyle(fontSize: 16)),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'provide your email';
+                            }
+                            return null;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        // cover letter
+                        TextFormField(
+                          controller: _coverLetterController,
+                          maxLines: 4,
+                          keyboardType: TextInputType.text,
+                          decoration: InputDecoration(
+                              hintStyle: TextStyle(
+                                  color:
+                                      Constants.primaryColor.withOpacity(0.4),
+                                  fontSize: 14),
+                              hintText: 'cover letter',
+                              filled: true,
+                              fillColor: Constants.lightColor,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              errorStyle: const TextStyle(fontSize: 16)),
+                          validator: (String? value) {
+                            if (value == null || value.isEmpty) {
+                              return 'provide the cover letter';
+                            }
+                            return null;
+                          },
+                        ),
                         const SizedBox(
                           height: 20,
                         ),
                         InkWell(
-                          onTap: () {
-                            if (_formKey.currentState!.validate()) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Processing Data')),
-                              );
-                            }
-                          },
+                          onTap: submitApplication,
                           child: Container(
                             alignment: Alignment.center,
                             width: MediaQuery.of(context).size.width,

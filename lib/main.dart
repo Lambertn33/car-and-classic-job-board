@@ -17,7 +17,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: Constants.primaryFont
       ),
-      initialRoute: "/",
+      initialRoute: "/home",
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

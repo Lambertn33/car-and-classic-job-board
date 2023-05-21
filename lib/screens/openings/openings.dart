@@ -84,7 +84,7 @@ class _OpeningsListPageState extends State<OpeningsListPage> {
                 height: 20,
               ),
               Text(
-                'Current openings',
+                'Our current openings',
                 style: TextStyle(fontSize: 26, color: Constants.primaryColor),
               ),
               const SizedBox(
@@ -98,7 +98,7 @@ class _OpeningsListPageState extends State<OpeningsListPage> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50)),
                     labelText: 'Search opening...',
-                    labelStyle: TextStyle(color: Constants.primaryColor),
+                    labelStyle: TextStyle(color: Constants.primaryColor.withOpacity(0.4)),
                   ),
                 ),
               ),
