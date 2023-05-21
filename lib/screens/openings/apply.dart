@@ -1,5 +1,6 @@
 import 'package:careers_app/helpers/constants.dart';
 import 'package:careers_app/models/opening.model.dart';
+import 'package:careers_app/screens/termsandconditions.dart';
 import 'package:careers_app/widgets/textFormWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -159,6 +160,52 @@ class _OpeningApplyState extends State<OpeningApply> {
                             ),
                           ),
                         ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              'by submitting, i agree to the ',
+                              style: TextStyle(color: Constants.lightColor),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                showModalBottomSheet(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 20, horizontal: 25),
+                                        child: Container(
+                                          height: MediaQuery.of(context)
+                                              .size
+                                              .height,
+                                          decoration: BoxDecoration(
+                                            color: Constants.lightColor,
+                                            borderRadius:
+                                                const BorderRadius.only(
+                                                    topLeft:
+                                                        Radius.circular(20),
+                                                    topRight:
+                                                        Radius.circular(20)),
+                                          ),
+                                          child: const SingleChildScrollView(
+                                            child: TermsAndConditionsPage(),
+                                          ),
+                                        ),
+                                      );
+                                    });
+                              },
+                              child: Text(
+                                'Terms and conditions',
+                                style: TextStyle(
+                                    color: Constants.lightColor,
+                                    decoration: TextDecoration.underline),
+                              ),
+                            )
+                          ],
+                        )
                       ],
                     ),
                   ),
