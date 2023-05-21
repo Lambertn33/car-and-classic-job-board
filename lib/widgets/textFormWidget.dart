@@ -30,7 +30,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
         ),
         hintText: widget.hintText,
         filled: true,
-        fillColor: Colors.white,
+        fillColor: Constants.lightColor,
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         errorStyle: const TextStyle(fontSize: 16)
       ),

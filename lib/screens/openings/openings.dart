@@ -55,9 +55,9 @@ class _OpeningsListPageState extends State<OpeningsListPage> {
                         onTap: () {
                           Navigator.of(context).pop();
                         },
-                        child: const Icon(
+                        child: Icon(
                           Icons.arrow_back,
-                          color: Colors.white,
+                          color: Constants.lightColor,
                         ),
                       ),
                     ),

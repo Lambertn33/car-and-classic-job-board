@@ -25,22 +25,22 @@ class _HomepageState extends State<Homepage> {
                 alignment: Alignment.center,
                 child: Image.asset('assets/images/logo.png'),
               ),
-              const Text(
+              Text(
                 'We are waiting for your application',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Constants.lightColor,
                   fontSize: 36,
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              const Text(
+              Text(
                 'Car & Classic is trusted by millions of people to buy and sell specialist vehicles'
                 'Unashamedly obsessed with classic cars, bikes, trucks and everything in between, we want to create a place for enthusiasts to engage with their passion.',
                 textAlign: TextAlign.justify,
-                style: TextStyle(color: Colors.white, fontSize: 15),
+                style: TextStyle(color: Constants.lightColor, fontSize: 15),
               ),
               const SizedBox(
                 height: 35,
@@ -51,7 +51,7 @@ class _HomepageState extends State<Homepage> {
                   height: 65,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Constants.lightColor,
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Row(

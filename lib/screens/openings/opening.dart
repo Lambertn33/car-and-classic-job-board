@@ -36,11 +36,11 @@ class _OpeningDetailsState extends State<OpeningDetails> {
                     Text(
                       opening.title,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white, fontSize: 40),
+                      style: TextStyle(color: Constants.lightColor, fontSize: 40),
                     ),
                     Text(
                       opening.location,
-                      style: const TextStyle(color: Colors.white, fontSize: 20),
+                      style: TextStyle(color: Constants.lightColor, fontSize: 20),
                     ),
                     InkWell(
                       onTap: () {
@@ -51,7 +51,7 @@ class _OpeningDetailsState extends State<OpeningDetails> {
                         alignment: Alignment.center,
                         width: MediaQuery.of(context).size.width / 2,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Constants.lightColor,
                             borderRadius: BorderRadius.circular(20)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -110,15 +110,15 @@ class _OpeningDetailsState extends State<OpeningDetails> {
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               Text(
                                 'Apply for this job',
                                 style: TextStyle(
                                     fontSize: 22,
-                                    color: Colors.white,
+                                    color: Constants.lightColor,
                                     fontWeight: FontWeight.w600),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                             ],

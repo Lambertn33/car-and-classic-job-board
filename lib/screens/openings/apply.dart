@@ -29,7 +29,7 @@ class _OpeningApplyState extends State<OpeningApply> {
                     Container(
                       padding: const EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Constants.lightColor,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
@@ -57,9 +57,9 @@ class _OpeningApplyState extends State<OpeningApply> {
                 Text(
                   'Application for ${openingToApply.title}',
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 28,
-                    color: Colors.white,
+                    color: Constants.lightColor,
                   ),
                 ),
                 const SizedBox(
@@ -71,26 +71,26 @@ class _OpeningApplyState extends State<OpeningApply> {
                   children: [
                     Text(
                       openingToApply.location,
-                      style: const TextStyle(color: Colors.white),
+                      style: TextStyle(color: Constants.lightColor),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    const Icon(
+                    Icon(
                       Icons.location_city,
-                      color: Colors.white,
+                      color: Constants.lightColor,
                     )
                   ],
                 ),
                 const SizedBox(
                   height: 30,
                 ),
-                const Text(
+                Text(
                   'Work with Europe s largest classics marketplace',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 12,
-                    color: Colors.white,
+                    color: Constants.lightColor,
                   ),
                 ),
                 const SizedBox(
@@ -152,7 +152,7 @@ class _OpeningApplyState extends State<OpeningApply> {
                             width: MediaQuery.of(context).size.width,
                             height: 70,
                             decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Constants.lightColor,
                                 borderRadius: BorderRadius.circular(50)),
                             child: Text(
                               'Submit',

@@ -27,11 +27,11 @@ class _OpeningCardWidgetState extends State<OpeningCardWidget> {
           children: [
             Text(
               opening.title,
-              style: const TextStyle(color: Colors.white, fontSize: 24),
+              style: TextStyle(color: Constants.lightColor, fontSize: 24),
             ),
             Text(
               opening.location,
-              style: const TextStyle(color: Colors.white, fontSize: 16),
+              style: TextStyle(color: Constants.lightColor, fontSize: 16),
             ),
             InkWell(
               onTap: (){
@@ -42,7 +42,7 @@ class _OpeningCardWidgetState extends State<OpeningCardWidget> {
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width / 2,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Constants.lightColor,
                     borderRadius: BorderRadius.circular(20)),
                 child: Text(
                   'VIEW MORE',
