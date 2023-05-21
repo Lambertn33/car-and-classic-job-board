@@ -1,7 +1,5 @@
 import 'package:careers_app/helpers/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class TermsAndConditionsPage extends StatelessWidget {
   const TermsAndConditionsPage({super.key});
@@ -26,7 +24,7 @@ class TermsAndConditionsPage extends StatelessWidget {
           ),
           textAlign: TextAlign.justify,
         ),
-         const SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Text(
@@ -44,7 +42,7 @@ class TermsAndConditionsPage extends StatelessWidget {
           ),
           textAlign: TextAlign.justify,
         ),
-         const SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Text(
@@ -62,7 +60,7 @@ class TermsAndConditionsPage extends StatelessWidget {
           ),
           textAlign: TextAlign.justify,
         ),
-         const SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Text(
