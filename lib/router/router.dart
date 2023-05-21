@@ -11,13 +11,18 @@ class RouteGenerator {
       case "/":
         return MaterialPageRoute(builder: (context) => const Homepage());
       case "/openings":
-        return MaterialPageRoute(builder: (context) => const OpeningsListPage());
+        return MaterialPageRoute(
+            builder: (context) => const OpeningsListPage());
       case "/opening":
         final Opening selectedOpening = settings.arguments as Opening;
-        return MaterialPageRoute(builder: (context) => OpeningDetails(opening: selectedOpening), settings: settings);
+        return MaterialPageRoute(
+            builder: (context) => OpeningDetails(opening: selectedOpening),
+            settings: settings);
       case "/apply":
         final Opening selectedOpening = settings.arguments as Opening;
-        return MaterialPageRoute(builder: (context) => OpeningApply(openingToApply: selectedOpening), settings: settings);
+        return MaterialPageRoute(
+            builder: (context) => OpeningApply(openingToApply: selectedOpening),
+            settings: settings);
       default:
         return MaterialPageRoute(builder: (context) => const Homepage());
     }
