@@ -12,6 +12,8 @@ class OpeningsListPage extends StatefulWidget {
 }
 
 class _OpeningsListPageState extends State<OpeningsListPage> {
+  final TextEditingController _searchKeyController = TextEditingController();
+  late String enteredKeyToSearch;
   List<Opening> openingsList = [];
 
   void getOpenings() {
@@ -22,6 +24,20 @@ class _OpeningsListPageState extends State<OpeningsListPage> {
   void initState() {
     super.initState();
     getOpenings();
+    _searchKeyController.addListener(searchOpening);
+  }
+
+  void searchOpening() {
+    String searchKey = _searchKeyController.value.text;
+    List<Opening> searchResults = openingsList
+        .where((opening) =>
+            opening.title.toLowerCase().contains(searchKey.toLowerCase()))
+        .toList();
+    setState(() {
+      openingsList = (searchResults.isNotEmpty && searchKey.isNotEmpty)
+          ? searchResults
+          : OpeningsServices.getOpeningsList();
+    });
   }
 
   @override
@@ -76,7 +92,8 @@ class _OpeningsListPageState extends State<OpeningsListPage> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: TextField(
+                child: TextFormField(
+                  controller: _searchKeyController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50)),

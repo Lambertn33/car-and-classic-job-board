@@ -6,11 +6,13 @@ class TextFormFieldWidget extends StatefulWidget {
   final String hintText;
   final TextInputType keyboardType;
   final String errorMessage;
+  final TextEditingController controller;
   const TextFormFieldWidget(
       {required this.maxLines,
       required this.hintText,
       required this.keyboardType,
       required this.errorMessage,
+      required this.controller,
       super.key});
 
   @override

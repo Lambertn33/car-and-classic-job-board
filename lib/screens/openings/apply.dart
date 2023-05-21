@@ -14,6 +14,10 @@ class OpeningApply extends StatefulWidget {
 
 class _OpeningApplyState extends State<OpeningApply> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _yearsOfExperienceController = TextEditingController();
+  final TextEditingController _portfolioUrlController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _coverLetterController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Opening openingToApply = widget.openingToApply;
@@ -106,35 +110,39 @@ class _OpeningApplyState extends State<OpeningApply> {
                     child: Column(
                       children: [
                         TextFormFieldWidget(
+                          controller: _yearsOfExperienceController,
                             maxLines: 1,
                             hintText: 'years of experience',
                             keyboardType: TextInputType.number,
                             errorMessage: 'please enter some value'),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         TextFormFieldWidget(
+                          controller: _portfolioUrlController,
                             maxLines: 1,
                             hintText: 'link to portfolio',
                             keyboardType: TextInputType.url,
                             errorMessage: 'please enter some value'),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         TextFormFieldWidget(
+                            controller: _emailController,
                             maxLines: 1,
                             hintText: 'email address',
                             keyboardType: TextInputType.emailAddress,
                             errorMessage: 'please enter some value'),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         TextFormFieldWidget(
+                            controller: _coverLetterController,
                             maxLines: 4,
                             hintText: 'cover letter',
                             keyboardType: TextInputType.text,
                             errorMessage: 'please enter some value'),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         InkWell(
