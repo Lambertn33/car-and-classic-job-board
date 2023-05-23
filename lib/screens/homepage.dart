@@ -23,7 +23,9 @@ class _HomepageState extends State<Homepage> {
             children: [
               Container(
                 alignment: Alignment.center,
-                child: Image.asset('assets/images/logo.png'),
+                height: 300,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(100)),
+                child: const Image(image: AssetImage('assets/images/logo.png')),
               ),
               Text(
                 'We are waiting for your application',
@@ -37,8 +39,8 @@ class _HomepageState extends State<Homepage> {
                 height: 20,
               ),
               Text(
-                'Car & Classic is trusted by millions of people to buy and sell specialist vehicles'
-                'Unashamedly obsessed with classic cars, bikes, trucks and everything in between, we want to create a place for enthusiasts to engage with their passion.',
+                'Facebook is an online social media and social networking service owned by American technology giant Meta Platforms. Created in 2004 by Mark Zuckerberg....'
+                ' we are hiring now..',
                 textAlign: TextAlign.justify,
                 style: TextStyle(color: Constants.lightColor, fontSize: 15),
               ),

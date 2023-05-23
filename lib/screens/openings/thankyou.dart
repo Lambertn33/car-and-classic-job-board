@@ -48,14 +48,14 @@ class _ApplicationSuccessState extends State<ApplicationSuccess> {
               height: 10,
             ),
             Text(
-              'Tom Conway',
+              'Mark Zuckerberg',
               style: TextStyle(color: Constants.lightColor, fontSize: 28),
             ),
             const SizedBox(
               height: 6,
             ),
             Text(
-              'Talent Acqusition manager at Car and classic',
+              'CEO at facebook',
               style: TextStyle(color: Constants.lightColor, fontSize: 14),
             ),
             const SizedBox(
